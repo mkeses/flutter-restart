@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'checkin_screen.dart';
+import 'services/auth_service.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -14,6 +15,8 @@ class _SignupScreenState extends State<SignupScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
+  final AuthService _authService = AuthService();
+
   @override
   void dispose() {
     _nameController.dispose();
@@ -22,14 +25,24 @@ class _SignupScreenState extends State<SignupScreen> {
     super.dispose();
   }
 
-  void _createAccount() {
+  Future<void> _createAccount() async {
     if (_formKey.currentState!.validate()) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const CheckinScreen(),
-        ),
-      );
+      try {
+        final user = await _authService.signUp(
+          _emailController.text.trim(),
+          _passwordController.text.trim(),
+        );
+
+        if (user != null) {
+
+        }
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Signup failed: $e'),
+          ),
+        );
+      }
     }
   }
 

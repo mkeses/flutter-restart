@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "105736690014",
+    "project_id": "wellness-app-188c8",
+    "storage_bucket": "wellness-app-188c8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105736690014:android:4bca4f725d87bfe2f597cf",
+        "android_client_info": {
+          "package_name": "com.example.reset_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLosSH5ULZVgGH1IYYMEMi6iaV_HpgvnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
